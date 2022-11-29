@@ -1,7 +1,12 @@
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-    transition: 5s;
+    width: 100%;
+    zoom: 98%;
+    animation-duration: 1ms;
+    transition: 1s;
+    justify-content: left;
+    align-items: left;
 }
 
 body {
@@ -14,6 +19,14 @@ body {
     padding: 1rem;
     background-color: #fff;
 }
+.div1 {
+    width:50%;
+    float:left;
+    }
+    .div2 {
+    float:left;
+    width:50%;
+    }
 
 @media screen and (min-width: 992px) {
     .content {
