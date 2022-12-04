@@ -1,8 +1,8 @@
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
 
-const maxRecords = 999
-const limit = 10
+const maxRecords = 151
+const limit = 12
 let offset = 0;
 
 function convertPokemonToLi(pokemon) {
@@ -15,29 +15,23 @@ function convertPokemonToLi(pokemon) {
                 <ol class="types">
                     ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                 </ol>
-
-                <img src="${pokemon.photo}"
-                     alt="${pokemon.name}">
+                    <img src="${pokemon.photo}"
+                        alt="${pokemon.name}">    
             </div>
+            <div class="pokemon-btn" id="btn-pokedetails">More details</div>
+            <ul class="main-stats">
+            <li>Weight: ${pokemon.weight / 10}kg</li>
+                <li>Height: ${pokemon.height / 10}m</li>
+                <li>Main move: ${pokemon.mainmove}</li>
+                <li>Ability: ${pokemon.abi}</li>
+            </ul>
+            <input type="button" value="X" class="closeButton" id="closeBtn">
+
         </li>
     `
 }
-
-function imagem(){
-    var img = document.getElementById("img")
-    var imagem = document.getElementById("imagem")
-    if(img.style.display == "none") { //verifica se a imagem está sendo exibida, se não estiver vai executar os comandos abaixo e se tiver vai executar o else
-      img.style.display="block" //exibe a imagem
-      imagem.innerHTML = "CLIQUE DE NOVO" //altera o texto
-    }
-    else { //se a imagem estiver sendo exibida vai executar os comandos abaixo
-      img.style.display="none"; //oculta a imagem
-      imagem.innerHTML = "CLIQUE AQUI" //altera o texto
-    }
-   }
-
-
-
+// <li>Stats</li>
+// <li>History</li>
 
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
@@ -61,3 +55,25 @@ loadMoreButton.addEventListener('click', () => {
         loadPokemonItens(offset, limit)
     }
 })
+
+//  ---------- Modal and click events  ----------
+let modal = document.querySelector('#modal-id')
+let closeModalBtn = document.querySelector('#closeBtn')
+
+document.addEventListener('click', function(e){
+    if(e.target.innerText == "More details"){
+        modal.style.display = "flex"
+        let pokeActual = e.target.parentElement
+        var pokeLi = document.querySelector('#modalpoke')
+        pokeLi.innerHTML = pokeActual.innerHTML
+        let pokeClass = pokeActual.classList[1]
+        pokeLi.classList = pokeClass
+        pokeLi.classList.add("mostrar")
+    }
+    if(e.target.id == "closeBtn"){
+        modal.style.display = "none"
+    } 
+})
+
+
+   
