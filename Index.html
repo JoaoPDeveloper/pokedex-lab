@@ -27,11 +27,12 @@
 </head>
 
 <body>
-    <button type="submit" class="botaoStart1"> Acessar Minha Conta</button>
-    <button type="submit" class="botaoStart2"> Criar uma Conta Nova!</button>
+    <!-- <button type="submit" class="botaoStart1"> Acessar Minha Conta</button>
+    <button type="submit" class="botaoStart2"> Criar uma Conta Nova!</button> -->
     <section class="content">
         <h1>Pokedex</h1>
         <br><br>
+        <input type="text" (input)="getPokemon($any($event.target).value)">
         <ol id="pokemonList" class="pokemons">
             <!-- ..... Pokemons here ..... -->
         </ol>
@@ -42,7 +43,7 @@
             </button>
         </div>
     </section>
-    <a id="link-topo" href="#">&#9650;</a>
+    <a id="link-topo" href="#" style="border-radius: 15px;">&#9650;</a>
 
 
     <div class="modal" id="modal-id">

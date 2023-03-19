@@ -63,7 +63,7 @@ footer .footer, #email{
     position: fixed;
     left: 91%;
     z-index: 1;
-    height: 8%;
+    height: 60px;
     bottom: 14px;
     border-radius: 5px;
  }
