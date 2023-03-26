@@ -18,7 +18,6 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     pokemon.mainmove = pokeDetail.moves[0].move.name
     pokemon.abi = pokeDetail.abilities[0].ability.name
 
-
     return pokemon
 }
 

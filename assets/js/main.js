@@ -18,12 +18,12 @@ function convertPokemonToLi(pokemon) {
                     <img src="${pokemon.photo}"
                         alt="${pokemon.name}">    
             </div>
-            <div class="pokemon-btn" id="btn-pokedetails">More details</div>
+            <div class="pokemon-btn" id="btn-pokedetails">Mais Detalhes</div>
             <ul class="main-stats">
-            <li>Weight: ${pokemon.weight / 10}kg</li>
-                <li>Height: ${pokemon.height / 10}m</li>
-                <li>Main move: ${pokemon.mainmove}</li>
-                <li>Ability: ${pokemon.abi}</li>
+            <li>Peso: ${pokemon.weight / 10}kg</li>
+                <li>Altura: ${pokemon.height / 10} metros</li>
+                <li>Habilidade Principal: ${pokemon.mainmove}</li>
+                <li>Habilidade: ${pokemon.abi}</li>
             </ul>
             <input type="button" value="X" class="closeButton" id="closeBtn">
 
@@ -61,7 +61,7 @@ let modal = document.querySelector('#modal-id')
 let closeModalBtn = document.querySelector('#closeBtn')
 
 document.addEventListener('click', function(e){
-    if(e.target.innerText == "More details"){
+    if(e.target.innerText == "Mais Detalhes"){
         modal.style.display = "flex"
         let pokeActual = e.target.parentElement
         var pokeLi = document.querySelector('#modalpoke')

@@ -14,7 +14,7 @@ h1{
     text-shadow: 0 2px 4px black;
     font-family: 'Pokemon Solid', sans-serif;
     letter-spacing: 10px;
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-top: 5px;
     text-align: center;
 }
@@ -37,7 +37,7 @@ h1{
     position: absolute;
     text-align: left;
     padding: 1rem;
-    background-color: rgb(59, 12, 100);
+    background-color: rgba(37, 3, 66, 0.624);
     border-radius: 1rem;
 }
 footer{
@@ -114,16 +114,18 @@ footer .footer, #email{
     text-align: center;
 }
 .modal{
-    width: 100%;
-    height: 100%;
+    width:  25%;
+    height: auto;
     background-color: rgb(3 14 72 / 40%);
+    font-size: 26px;
     position: fixed;
     top: 0;
     right: 0;
+    color: yellow;
     text-align: center;
 }
 #modalpoke .type{
-    filter: brightness(1)
+    filter: brightness(1);
 }
 .modal .main-stats{
     padding: 0;
@@ -137,13 +139,14 @@ footer .footer, #email{
 }
 .pokemon-btn:hover{
     cursor: pointer;
-    color: #fff;
+    color: #ffffff;
     text-decoration: underline;
 }
 .pokemon-btn{
     width: max-content;
     color: rgb(46, 43, 43);
-    font-size: 0.9rem;
+    font-size: 1.3rem;
+    transition: 0.5s;
 }
 
 .modal .poke-details-text{
@@ -163,6 +166,7 @@ footer .footer, #email{
 }
 .main-stats li{
     margin: 5px;
+    font-size: 1.4rem;
 }
 .modal .type{
     font-size: 1.2rem;
@@ -240,7 +244,7 @@ footer .footer, #email{
 @media only screen and (max-width: 992px){
     .content{
         height: auto;
-        width: 85%;
+        width: 100%;
         margin: 0 auto;
         border-radius: 1rem;
         padding: 1rem;
@@ -250,30 +254,44 @@ footer .footer, #email{
     }
     .modal{
         text-align: center;
+        width: 100%;
+        align-items: center;
     }
     #modalpoke{
         margin: 4rem auto;
     }
 }
-@media only screen and (max-width: 650px){
+@media only screen and (min-width: 650px){
     .content{
         height: auto;
+        width: 90%;
     }
     h1{
         font-size: 3rem;
     }
+    #modal{
+        width: 100%;
+    }
     #modalpoke{
-        width: 60%;
+        width: 80%;
         height: fit-content;
         padding: 1rem;
         margin: 3rem auto;
-
+    }
+    .pokemon {
+        display: flex;
+        flex-direction: column;
+        margin: 5px;
+        border-radius: 1rem;
+        padding: 14px;
+        width: 95%;
+        margin-left: 1px;
     }
 }
-@media only screen and (max-width: 410px){
+@media only screen and (max-width: 400px){
     .content{
         height: auto;
-        width: 85%;
+        width: 90%;
         margin: 0 auto;
         border-radius: 1rem;
         padding: 1rem;
@@ -281,8 +299,10 @@ footer .footer, #email{
     h1{
         font-size: 2rem;
     }
+    
     .modal{
         text-align: center;
+        width: 100%;
     }
     #modalpoke{
         width: fit-content;
