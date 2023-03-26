@@ -241,10 +241,10 @@ footer .footer, #email{
     animation: mostrarModal 0.25s
 }
 
-@media only screen and (max-width: 992px){
+@media only screen and (max-width: 1200px){
     .content{
         height: auto;
-        width: 100%;
+        width: 93%;
         margin: 0 auto;
         border-radius: 1rem;
         padding: 1rem;
@@ -261,7 +261,7 @@ footer .footer, #email{
         margin: 4rem auto;
     }
 }
-@media only screen and (min-width: 650px){
+@media only screen and (max-width: 750px){
     .content{
         height: auto;
         width: 90%;
@@ -269,12 +269,13 @@ footer .footer, #email{
     h1{
         font-size: 3rem;
     }
-    #modal{
+    .modal{
         width: 100%;
+        height: 100%;
     }
     #modalpoke{
         width: 80%;
-        height: fit-content;
+        height: 100%;
         padding: 1rem;
         margin: 3rem auto;
     }
@@ -288,9 +289,9 @@ footer .footer, #email{
         margin-left: 1px;
     }
 }
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 425px){
     .content{
-        height: auto;
+        height: 100%;
         width: 90%;
         margin: 0 auto;
         border-radius: 1rem;
@@ -299,19 +300,19 @@ footer .footer, #email{
     h1{
         font-size: 2rem;
     }
-    
     .modal{
         text-align: center;
         width: 100%;
+        height: 100%;
     }
     #modalpoke{
         width: fit-content;
-        height: fit-content;
+        height: 50%;
         margin: 2rem auto;
-        padding: 1rem;
+        padding: 0.7rem;
     }
     .modal .detail img{
-        width: 80%;
+        width: 100%;
     }
     .modal span, .modal .detail, .modal .type{
         font-size: 1.25rem;
