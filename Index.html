@@ -23,6 +23,9 @@
     <!-- Nosso CSS -->
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/pokedex.css">
+    <!-- CDN Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
 
 </head>
 
@@ -32,11 +35,17 @@
     <section class="content">
         <h1>Pokedex</h1>
         <br><br>
+        <form class="inputSearch">
+            <label for="search"></label>
+            <input required="" pattern=".*\S.*" type="search" class="input" id="search"
+                placeholder="     Procurar Pokemons" id="" autofocus>
+            <span class="caret"></span>
+        </form>
         <!-- <input type="text" (input)="getPokemon($any($event.target).value)"> -->
-        <ol id="pokemonList" class="pokemons">
+        <ol id="pokemonList">
             <!-- ..... Pokemons here ..... -->
         </ol>
-        
+
         <div class="pagination">
             <button id="loadMoreButton" type="button">
                 Carregar Mais Pokémons
@@ -44,14 +53,14 @@
         </div>
     </section>
     <a id="link-topo" href="#" style="border-radius: 15px;">&#9650;</a>
-    
-    
+
+
     <div class="modal" id="modal-id">
         <div id="modalpoke">Pokemon com detalhes
             <input type="button" value="X" class="closeButton">
         </div>
     </div>
-    
+
     <!-- Nosso JS -->
     <script src="/assets/js/pokemon-model.js"></script>
     <script src="/assets/js/poke-api.js"></script>

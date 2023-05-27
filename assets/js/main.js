@@ -1,5 +1,7 @@
+
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
+const inputSearchPokemon = document.querySelector('.inputSearch input')
 
 const maxRecords = 151
 const limit = 15;
@@ -9,7 +11,7 @@ function convertPokemonToLi(pokemon) {
     return `
         <li class="pokemon ${pokemon.type}">
             <span class="number">#${pokemon.number}</span>
-            <span class="name">${pokemon.name}</span>
+           <span class="name">${pokemon.name}</span>
 
             <div class="detail">
                 <ol class="types">
@@ -75,5 +77,31 @@ document.addEventListener('click', function(e){
     } 
 })
 
+const filterNames = (names,inputValue,returnMatchedNames) => names
+    .filter(name =>{
+        const matchedNames = name.textContent.toLowerCase().includes(inputValue)
+        return  returnMatchedNames ? matchedNames : !matchedNames
+    })
 
-   
+const manipulateClasses = (names,classToAdd, ClassToRemove) =>{
+   names.forEach(name =>{
+        name.classList.remove(ClassToRemove)
+        name.classList.add(classToAdd)
+    })
+}
+    const hideNames = (names, inputValue) => {
+    const namesToHide = filterNames(names,inputValue,false)
+    manipulateClasses(namesToHide,'hidden','pokemon.name')
+    }
+    
+    const showNames = (names, inputValue) =>{
+    const namesToShow = filterNames(names,inputValue,true)
+    manipulateClasses(namesToShow,'pokemon.name', 'hidden')
+    }
+
+inputSearchPokemon.addEventListener('input', event =>{ 
+    const inputValue = event.target.value.trim().toLowerCase()
+    const names = Array.from(pokemonList.children)
+    hideNames(names, inputValue)
+    showNames(names, inputValue)
+})
